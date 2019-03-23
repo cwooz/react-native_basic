@@ -9,11 +9,20 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import { SocialIcon, SearchBar, Header } from "react-native-elements";
 
 import { MonoText } from '../components/StyledText';
 
 
 export default class HomeScreen extends React.Component {
+
+  state = {
+    search: '',
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
 
   static navigationOptions = {
     header: null,
@@ -22,12 +31,28 @@ export default class HomeScreen extends React.Component {
 
   render() {
     let pic1 = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+      // uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     }
+
+    const { search } = this.state;
+
 
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        {/* <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}> */}
+
+          <Header
+            leftComponent={{ icon: 'menu', color: '#fff' }}
+            centerComponent={{ text: 'Some App', style: { color: '#fff' } }}
+            rightComponent={{ icon: 'home', color: '#fff' }}
+          />
+
+          <SearchBar
+            placeholder="Search"
+            onChangeText={this.updateSearch}
+            value={search}
+          />
+
           <View style={styles.welcomeContainer}>
             <Image
               source={
@@ -40,26 +65,32 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
+            {/* {this._maybeRenderDevelopmentModeWarning()} */}
 
-            <Text style={styles.getStartedText}>New App</Text>
+            <Text style={styles.getStartedText}>Some App</Text>
 
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
+            {/* <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View>
 
             <Text style={styles.getStartedText}>
               Built with React Native!
-            </Text>
+            </Text> */}
           </View>
 
-          
-        </ScrollView>
 
-              {/* Flex Background Color */}
-              {/* <View style={ {flex: 1} }>
-                <View style={ {flex: 1, backgroundColor: 'aquamarine'} } />
-              </View> */}
+          <View style={{flex: 1, flexDirection: 'row'}}>
+            <View style={{width: '33.33%', height: 50, backgroundColor: 'powderblue'}} />
+            <View style={{width: '33.33%', height: 50, backgroundColor: 'skyblue'}} />
+            <View style={{width: '33.33%', height: 50, backgroundColor: 'steelblue'}} />
+          </View>
+        
+
+
+          
+        {/* </ScrollView> */}
+        
+
 
               <Image source={pic1} style={{width: 193, height: 110}}/>
 
@@ -78,11 +109,33 @@ export default class HomeScreen extends React.Component {
           </View>
 
         <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is the tab bar...</Text>
+        
+        <View style={{flex: 1, flexDirection: 'row', marginLeft: 0}}>
+          <SocialIcon
+            type='twitter'
+          />
+          <SocialIcon
+            type='facebook'
+          />
+          <SocialIcon
+            type='medium'
+          />
+          <SocialIcon
+            type='instagram'
+          />
+          <SocialIcon
+            type='gitlab'
+          />
+          <SocialIcon
+            type='twitch'
+          />
+        </View>
+
+          {/* <Text style={styles.tabBarInfoText}>This is the tab bar...</Text>
 
           <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
             <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
+          </View> */}
         </View>
       </View>
     );
@@ -147,7 +200,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    paddingTop: 20,
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -164,6 +217,7 @@ const styles = StyleSheet.create({
   getStartedContainer: {
     alignItems: 'center',
     marginHorizontal: 50,
+    marginBottom: 20
   },
   homeScreenFilename: {
     marginVertical: 7,
