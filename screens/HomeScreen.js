@@ -38,23 +38,23 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>New Starter App</Text>
+            <Text style={styles.getStartedText}>New App</Text>
 
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View>
 
             <Text style={styles.getStartedText}>
-              Built with React Native &amp; Exponent!
+              Built with React Native!
             </Text>
           </View>
 
           
         </ScrollView>
 
-
+              {/* Flex Background Color */}
               <View style={ {flex: 1} }>
-                <View style={ {flex: 1, backgroundColor: 'steelblue'} } />
+                <View style={ {flex: 1, backgroundColor: 'aquamarine'} } />
               </View>
 
 
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: 'powderblue',
   },
   developmentModeText: {
     marginBottom: 20,
