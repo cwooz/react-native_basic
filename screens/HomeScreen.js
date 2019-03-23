@@ -21,6 +21,10 @@ export default class HomeScreen extends React.Component {
 
 
   render() {
+    let pic1 = {
+      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+    }
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -53,9 +57,11 @@ export default class HomeScreen extends React.Component {
         </ScrollView>
 
               {/* Flex Background Color */}
-              <View style={ {flex: 1} }>
+              {/* <View style={ {flex: 1} }>
                 <View style={ {flex: 1, backgroundColor: 'aquamarine'} } />
-              </View>
+              </View> */}
+
+              <Image source={pic1} style={{width: 193, height: 110}}/>
 
 
         <View style={styles.middleBox}>
