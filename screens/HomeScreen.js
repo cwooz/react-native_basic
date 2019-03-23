@@ -12,10 +12,13 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+
 export default class HomeScreen extends React.Component {
+
   static navigationOptions = {
     header: null,
   };
+
 
   render() {
     return (
@@ -49,6 +52,12 @@ export default class HomeScreen extends React.Component {
           
         </ScrollView>
 
+
+              <View style={ {flex: 1} }>
+                <View style={ {flex: 1, backgroundColor: 'steelblue'} } />
+              </View>
+
+
         <View style={styles.middleBox}>
 
             <Image
@@ -72,6 +81,8 @@ export default class HomeScreen extends React.Component {
       </View>
     );
   }
+
+  // After Render Method
 
   _maybeRenderDevelopmentModeWarning() {
     if (__DEV__) {
