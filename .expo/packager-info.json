@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 7456,
-  "expoServerNgrokUrl": "https://dd-as4.cwooz.starterproject.exp.direct",
-  "packagerNgrokUrl": "https://packager.dd-as4.cwooz.starterproject.exp.direct",
-  "ngrokPid": 16024,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
